@@ -18,7 +18,7 @@ typedef struct chapitre{
 
 
 void dest(chapitre * vardest){
-	printf("Description: %s\n",(*vardest).description);
+	printf(" %s\n",(*vardest).description);
 	printf("PO que tu gagnes: %d\n",(*vardest).gainOr);
 		poJoueur += (*vardest).gainOr;
 	printf("Pts de vie que tu gagnes: %d\n",(*vardest).gainPointDeVie );
@@ -32,9 +32,11 @@ void dest(chapitre * vardest){
 
 int main(){
 
-	chapitre chapitre1 = {"NEW CHAPTER: Tu debutes ton aventure, pour t'aider, le dirigeant de la ville comme à chaque aventurier qui debute t'offre 50 PO",1,50,5,{2,3}};
-	chapitre chapitre2 = {"NEW CHAPTER: Pour devenir plus fort tu decides de t'entrainer, tu participes a des combats et tu gagnes 100PO",2,100,5,{1,3}};
-	chapitre chapitre3 = {"NEW CHAPTER: Un gros combat t'attend, tu le vaincs et remporte 1000PO",3,1000,5,{1,2}};
+	chapitre chapitre1 = {"NEW CHAPTER: Tu debutes ton aventure, pour t'aider, le dirigeant de la ville comme a chaque aventurier qui debute t'offre 50 PO",1,50,5,{2,3}};
+	chapitre chapitre2 = {"NEW CHAPTER: Pour devenir plus fort tu decides de t'entrainer, tu participes a des combats et tu gagnes 100PO",2,100,5,{3,4}};
+	chapitre chapitre3 = {"NEW CHAPTER: Un gros combat t'attend, tu le vaincs et remporte 1000PO",3,1000,5,{4,2}};
+	chapitre chapitre4 = {"NEW CHAPTER: Tu as envie d'un peu de repos, tu te diriges vers les nuages moelleux de la ville.",4,0,15,{2,3}};
+
 
 
 //Choix destination
@@ -43,23 +45,48 @@ int main(){
 int choix = 0;
 
 
-
-
 while(ptdVie>=0){
-	printf("ou veux tu aller ? (1) ,(2) ou(3)\n");
+	printf("Ou veux tu aller ? (1),(2),(3),(4)\n");
 	scanf("%d",&choix);
 		switch(choix){
 
 			case 1 : 
 				dest(&chapitre1);
+					printf("Ou veux tu aller desormais ?\n");
+					scanf("%d",&choix);
+					if (choix==4){
+						printf("Tu ne peux te rendre a ce chapitre, choisis en un autre\n");
+						scanf("%d",&choix);
+				}
 			break;
 
 			case 2 :
 				dest(&chapitre2);
+					printf("Ou veux tu aller desormais ?\n");
+					scanf("%d",&choix);
+					if (choix==1){
+						printf("Tu ne peux te rendre a ce chapitre, choisis en un autre\n");
+						scanf("%d",&choix);
+					}
 			break;
 
 			case 3 :
 				dest(&chapitre3);
+					printf("Ou veux tu aller desormais ?\n");
+					scanf("%d",&choix);
+					if (choix==1){
+						printf("Tu ne peux te rendre a ce chapitre, choisis en un autre\n");
+						scanf("%d",&choix);
+					}
+			break;
+			case 4 :
+				dest(&chapitre4);
+					printf("Ou veux tu aller desormais ?\n");
+					scanf("%d",&choix);
+					if (choix==1){
+						printf("Tu ne peux te rendre a ce chapitre, choisis en un autre\n");
+						scanf("%d",&choix);
+					}
 			break;
 		};
 }
