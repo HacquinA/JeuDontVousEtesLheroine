@@ -3,8 +3,8 @@
 #include <time.h>
 #include <string.h>
 
-int poJoueur = 0;
-int ptdVie = 0;
+int poJoueur = 10;
+int ptdVie = 100;
 typedef struct chapitre{
 	char description[200];
 	int index;
@@ -20,9 +20,13 @@ typedef struct chapitre{
 void dest(chapitre * vardest){
 	printf(" %s\n",(*vardest).description);
 	printf("PO que tu gagnes: %d\n",(*vardest).gainOr);
-		poJoueur += (*vardest).gainOr;
+		if((poJoueur + (*vardest).gainOr>=0)){
+			poJoueur+=(*vardest).gainOr;
+		};
 	printf("Pts de vie que tu gagnes: %d\n",(*vardest).gainPointDeVie );
-		ptdVie += (*vardest).gainPointDeVie;
+		if(ptdVie + (*vardest).gainPointDeVie <0 && ptdVie + (*vardest).gainPointDeVie>=100){
+			ptdVie + (*vardest).gainPointDeVie;
+		};
 	printf("Possibilites de destination: %d %d\n",(*vardest).id[0],(*vardest).id[1]);
 }
 
@@ -33,8 +37,8 @@ void dest(chapitre * vardest){
 int main(){
 
 	chapitre chapitre1 = {"NEW CHAPTER: Tu debutes ton aventure, pour t'aider, le dirigeant de la ville comme a chaque aventurier qui debute t'offre 50 PO",1,50,5,{2,3}};
-	chapitre chapitre2 = {"NEW CHAPTER: Pour devenir plus fort tu decides de t'entrainer, tu participes a des combats et tu gagnes 100PO",2,100,5,{3,4}};
-	chapitre chapitre3 = {"NEW CHAPTER: Un gros combat t'attend, tu le vaincs et remporte 1000PO",3,1000,5,{4,2}};
+	chapitre chapitre2 = {"NEW CHAPTER: Pour devenir plus fort tu decides de t'entrainer, tu participes a des combats et tu gagnes 100PO mais tu perds un peu devie !",2,100,-25,{3,4}};
+	chapitre chapitre3 = {"NEW CHAPTER: Un gros combat t'attend, tu le vaincs et remporte 1000PO mais tu perds un peu de vie !",3,1000,-40,{4,2}};
 	chapitre chapitre4 = {"NEW CHAPTER: Tu as envie d'un peu de repos, tu te diriges vers les nuages moelleux de la ville.",4,0,15,{2,3}};
 
 
