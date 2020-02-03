@@ -47,6 +47,7 @@ int main(){
 
 
 int choix = 0;
+int decision = 0;
 
 
 while(ptdVie>=0){
@@ -58,9 +59,21 @@ while(ptdVie>=0){
 				dest(&chapitre1);
 					printf("Ou veux tu aller desormais ?\n");
 					scanf("%d",&choix);
-					if (choix==4){
+				if (choix==4){
 						printf("Tu ne peux te rendre a ce chapitre, choisis en un autre\n");
 						scanf("%d",&choix);
+				}
+				if (choix==2){
+					printf("Tu dois t'inscrire à ses combats, cela coûte 5PO, Veux tu t'inscrire ? (1) oui (2) non\n");
+					scanf("%d",&decision);
+					if (decision==1 && poJoueur>=5){
+						dest(&chapitre2);
+						poJoueur-=5;
+					}
+					else{
+						printf("Choisis une autre destination.\n");
+						scanf("%d",&choix);
+					}
 				}
 			break;
 
@@ -72,6 +85,29 @@ while(ptdVie>=0){
 						printf("Tu ne peux te rendre a ce chapitre, choisis en un autre\n");
 						scanf("%d",&choix);
 					}
+					if (choix==3){
+						printf("Tu as besoin d'un groupe pour tuer ce boss, les engager va te couter 30PO, Veux tu y aller ? (1) oui (2) non\n");
+						scanf("%d",&decision);
+						if (decision==1 && poJoueur>=30){
+							dest(&chapitre3);
+							poJoueur-=30;
+					}
+					else{
+						printf("Choisis une autre destination.\n");
+						scanf("%d",&choix);
+					}
+					if (choix==4){
+						printf("L'acces aux nuages coute 15PO, Veux tu y aller ? (1) oui (2) non\n");
+						scanf("%d",&decision);
+						if (decision==1 && poJoueur>=15){
+							dest(&chapitre4);
+							poJoueur-=15;
+					}
+					else{
+						printf("Choisis une autre destination.\n");
+						scanf("%d",&choix);
+					}
+
 			break;
 
 			case 3 :
@@ -82,6 +118,29 @@ while(ptdVie>=0){
 						printf("Tu ne peux te rendre a ce chapitre, choisis en un autre\n");
 						scanf("%d",&choix);
 					}
+					if (choix==4){
+						printf("L'acces aux nuages coute 15PO, Veux tu y aller ? (1) oui (2) non\n");
+						scanf("%d",&decision);
+						if (decision==1 && poJoueur>=15){
+							dest(&chapitre4);
+							poJoueur-=15;
+					}
+					else{
+						printf("Choisis une autre destination.\n");
+						scanf("%d",&choix);
+					}
+					if (choix==2){
+					printf("Tu dois t'inscrire à ses combats, cela coûte 5PO, Veux tu t'inscrire ? (1) oui (2) non\n");
+					scanf("%d",&decision);
+					if (decision==1 && poJoueur>=5){
+						dest(&chapitre2);
+						poJoueur-=5;
+					}
+					else{
+						printf("Choisis une autre destination.\n");
+						scanf("%d",&choix);
+					}
+					
 			break;
 			case 4 :
 				dest(&chapitre4);
@@ -89,6 +148,28 @@ while(ptdVie>=0){
 					scanf("%d",&choix);
 					if (choix==1){
 						printf("Tu ne peux te rendre a ce chapitre, choisis en un autre\n");
+						scanf("%d",&choix);
+					}
+					if (choix==2){
+					printf("Tu dois t'inscrire à ses combats, cela coûte 5PO, Veux tu t'inscrire ? (1) oui (2) non\n");
+					scanf("%d",&decision);
+					if (decision==1 && poJoueur>=5){
+						dest(&chapitre2);
+						poJoueur-=5;
+					}
+					else{
+						printf("Choisis une autre destination.\n");
+						scanf("%d",&choix);
+					}
+					if (choix==3){
+						printf("Tu as besoin d'un groupe pour tuer ce boss, les engager va te couter 30PO, Veux tu y aller ? (1) oui (2) non\n");
+						scanf("%d",&decision);
+						if (decision==1 && poJoueur>=30){
+							dest(&chapitre3);
+							poJoueur-=30;
+					}
+					else{
+						printf("Choisis une autre destination.\n");
 						scanf("%d",&choix);
 					}
 			break;
