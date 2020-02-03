@@ -91,6 +91,7 @@ while(ptdVie>=0){
 						if (decision==1 && poJoueur>=30){
 							dest(&chapitre3);
 							poJoueur-=30;
+						}
 					}
 					else{
 						printf("Choisis une autre destination.\n");
@@ -102,6 +103,7 @@ while(ptdVie>=0){
 						if (decision==1 && poJoueur>=15){
 							dest(&chapitre4);
 							poJoueur-=15;
+						}
 					}
 					else{
 						printf("Choisis une autre destination.\n");
@@ -124,6 +126,7 @@ while(ptdVie>=0){
 						if (decision==1 && poJoueur>=15){
 							dest(&chapitre4);
 							poJoueur-=15;
+						}
 					}
 					else{
 						printf("Choisis une autre destination.\n");
@@ -132,9 +135,10 @@ while(ptdVie>=0){
 					if (choix==2){
 					printf("Tu dois t'inscrire à ses combats, cela coûte 5PO, Veux tu t'inscrire ? (1) oui (2) non\n");
 					scanf("%d",&decision);
-					if (decision==1 && poJoueur>=5){
-						dest(&chapitre2);
-						poJoueur-=5;
+						if (decision==1 && poJoueur>=5){
+							dest(&chapitre2);
+							poJoueur-=5;
+						}
 					}
 					else{
 						printf("Choisis une autre destination.\n");
@@ -144,13 +148,13 @@ while(ptdVie>=0){
 			break;
 			case 4 :
 				dest(&chapitre4);
-					printf("Ou veux tu aller desormais ?\n");
+				printf("Ou veux tu aller desormais ?\n");
+				scanf("%d",&choix);
+				if (choix==1){
+					printf("Tu ne peux te rendre a ce chapitre, choisis en un autre\n");
 					scanf("%d",&choix);
-					if (choix==1){
-						printf("Tu ne peux te rendre a ce chapitre, choisis en un autre\n");
-						scanf("%d",&choix);
-					}
-					if (choix==2){
+				}
+				if (choix==2){
 					printf("Tu dois t'inscrire à ses combats, cela coûte 5PO, Veux tu t'inscrire ? (1) oui (2) non\n");
 					scanf("%d",&decision);
 					if (decision==1 && poJoueur>=5){
@@ -167,41 +171,16 @@ while(ptdVie>=0){
 						if (decision==1 && poJoueur>=30){
 							dest(&chapitre3);
 							poJoueur-=30;
+						}
 					}
 					else{
 						printf("Choisis une autre destination.\n");
 						scanf("%d",&choix);
 					}
+				}
 			break;
-		};
-}
-
-
-
-	/*printf("Bonjour aventurier, aujourd'hui tu peux te rendre a Celestia (1) ou a Fribourg (2)\n");
-	scanf("%d",&choix);
-
-	if(choix==1){
-		printf("Felicitation tu as atteint Celestia, proite de leurs nuages moelleux !\n");
-
-	}
-	if (choix==2){
-		printf("Felicitation tu as atteint Fribourg, profite de leurs delicieux ramens !\n");
-	} */
-
-// deplacement 
-		/*printf("Tu change de destination ou veux tu aller? \n");
-		scanf("%d",&choix);
-			if(choix==1){
-			printf("Felicitation tu as atteint Celestia, profite de leurs nuages moelleux !\n");
 			}
-			if (choix==2){
-				printf("Felicitation tu as atteint Fribourg, profite de leurs delicieux ramens !\n");
-			}*/
-
-
-
-
+		}
 return 0;
 }
 
